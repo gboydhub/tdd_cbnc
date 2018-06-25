@@ -44,7 +44,7 @@ class TestCBNC < Minitest::Test
         assert_equal([4, 4, 2, 0, 4], check_list(list, '1234'))
     end
 
-    def test_check_list_winners_returns_hash
-        assert_equal(Hash, check_list_winners([],[]))
+    def test_check_list_winners_returns_array
+        assert_equal(Array, get_total_winners([],[]).class)
     end
 end

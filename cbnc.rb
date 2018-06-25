@@ -22,3 +22,7 @@ def check_list(ticket_list, ticket_winner)
 
     ticket_matches
 end
+
+def get_total_winners(ticket_list, winner_list)
+    []
+end
