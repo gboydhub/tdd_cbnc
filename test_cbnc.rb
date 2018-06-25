@@ -47,4 +47,8 @@ class TestCBNC < Minitest::Test
     def test_check_list_winners_returns_array
         assert_equal(Array, get_total_winners([],[]).class)
     end
+
+    def test_get_winners_array_is_hash
+        assert_equal(Hash, get_total_winners([],[])[0].class)
+    end
 end
