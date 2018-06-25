@@ -1,4 +1,7 @@
 def match_check(ticket1, ticket2)
+    unless ticket1.is_a?(String) && ticket2.is_a?(String)
+        return 0
+    end
     ticket1 = ticket1.split('')
     ticket2 = ticket2.split('')
     matchcounter = 0
