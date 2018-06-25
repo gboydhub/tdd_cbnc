@@ -13,4 +13,8 @@ class TestPizzaApp < Minitest::Test
     def test_no_match_returns_0
         assert_equal(0, match_check("5678", "1234"))
     end
+
+    def test_1_match_returns_1
+        assert_equal(1, match_check("1234", "1555"))
+    end
 end
