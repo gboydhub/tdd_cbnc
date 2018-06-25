@@ -1,7 +1,7 @@
 require "minitest/autorun"
 require_relative "cbnc.rb"
 
-class TestPizzaApp < Minitest::Test
+class TestCBNC < Minitest::Test
     def test_assert_1_equals_1
         assert_equal(1, 1)
     end
@@ -28,6 +28,10 @@ class TestPizzaApp < Minitest::Test
     end
 
     def test_check_list_returns_array
-        assert_equal(Array, check_list(['']).class)
+        assert_equal(Integer, check_list([''], '').class)
+    end
+
+    def test_check_list_returns_0_winners
+        assert_equal(0, check_list(['1234', '2345'], '7777'))
     end
 end

@@ -14,6 +14,6 @@ def match_check(ticket1, ticket2)
     matchcounter
 end
 
-def check_list(ticket_list)
-    []
+def check_list(ticket_list, ticket_winner)
+    1
 end
