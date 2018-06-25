@@ -13,3 +13,7 @@ def match_check(ticket1, ticket2)
 
     matchcounter
 end
+
+def check_list(ticket_list)
+    []
+end
