@@ -28,19 +28,19 @@ class TestCBNC < Minitest::Test
     end
 
     def test_check_list_returns_array
-        assert_equal(Integer, check_list([''], '').class)
+        assert_equal(Array, check_list([''], '').class)
     end
 
     def test_check_list_returns_0_winners
-        assert_equal(0, check_list(['1234', '2345'], '7777'))
+        assert_equal([0], check_list(['1234'], '7777'))
     end
 
     def test_check_list_returns_1_winner
-        assert_equal(1, check_list(['1234', '2345'], '1234'))
+        assert_equal([4, 0], check_list(['1234', '2345'], '1234'))
     end
 
     def test_check_3_winners_from_5
         list = ['1234', '1234', '2555', '4321', '1234']
-        assert_equal(3, check_list(list, '1234'))
+        assert_equal([4, 4, 0, 0, 4], check_list(list, '1234'))
     end
 end

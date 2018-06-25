@@ -15,12 +15,10 @@ def match_check(ticket1, ticket2)
 end
 
 def check_list(ticket_list, ticket_winner)
-    number_winners = 0
+    ticket_matches = Array.new()
     ticket_list.each do |num|
-        if match_check(num, ticket_winner) == 4
-            number_winners += 1
-        end
+        ticket_matches << match_check(num, ticket_winner)
     end
 
-    number_winners
+    ticket_matches
 end
