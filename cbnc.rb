@@ -24,5 +24,16 @@ def check_list(ticket_list, ticket_winner)
 end
 
 def get_total_winners(ticket_list, winner_list)
-    [{0 => 1}]
+    built_array = Array.new()
+    winner_list.each do |ticket|
+        match_list = check_list(ticket_list, ticket)
+        converted_hash = {}
+        match_list.each_with_index do |correct, index|
+            converted_hash[index] = correct
+        end
+
+        built_array << converted_hash
+    end
+
+    built_array
 end

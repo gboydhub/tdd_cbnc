@@ -49,11 +49,11 @@ class TestCBNC < Minitest::Test
     end
 
     def test_get_winners_array_is_hash
-        assert_equal(Hash, get_total_winners([],[])[0].class)
+        assert_equal(Hash, get_total_winners([''],[''])[0].class)
     end
 
     def test_get_winners_data
-        assert_equal({0 => 1}, get_total_winners(['1234'], ['1234'])[0])
+        assert_equal([{0 => 1}], get_total_winners(['1234'], ['1555']))
     end
 
     def test_get_winners_multiple_tickets
