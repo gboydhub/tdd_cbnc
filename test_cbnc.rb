@@ -26,4 +26,8 @@ class TestPizzaApp < Minitest::Test
         assert_equal(0, match_check(3214, "3214"))
         assert_equal(0, match_check(["3214"], "3214"))
     end
+
+    def test_check_list_returns_array
+        assert_equal(Array, check_list(['']).class)
+    end
 end
