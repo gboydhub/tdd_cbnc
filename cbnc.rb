@@ -15,5 +15,5 @@ def match_check(ticket1, ticket2)
 end
 
 def check_list(ticket_list, ticket_winner)
-    1
+    0
 end
