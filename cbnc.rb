@@ -38,11 +38,13 @@ def get_total_winners(ticket_list, winner_list)
     built_array
 end
 
-def print_results(winning_data)
+def print_results(winning_data, start=0, cutoff=200)
     winning_data.each_with_index do |tickset, winid|
         puts "\nData for winning ticket #{winid}"
         tickset.each do |tresult|
-            puts "Ticket ##{tresult[0]} is off by: #{tresult[1]}"
+            if tresult[1] >= start && tresult[1] <= cutoff
+                puts "Ticket ##{tresult[0]} is off by: #{tresult[1]}"
+            end
         end
     end
 end
