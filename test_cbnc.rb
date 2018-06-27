@@ -59,4 +59,16 @@ class TestCBNC < Minitest::Test
     def test_get_winners_multiple_winners
         assert_equal([[[0, 2]], [[0, 3]]], get_total_winners(['1234'], ['1255', '1555']))
     end
+
+    def test_get_winners_full
+        assert_equal([[[0, 3], [1, 4]], [[1, 0], [0, 4]]], get_total_winners(['1234','5555'], ['4213','5555']))
+    end
+
+    def test_print_results
+        ticket_list = ['1234', '5123', '92832', '3938272']
+        wintick_list = ['9483', '1010101', '3938272']
+        winner_data = get_total_winners(ticket_list, wintick_list)
+
+        print_results(winner_data)
+    end
 end

@@ -28,7 +28,6 @@ def get_total_winners(ticket_list, winner_list)
     winner_list.each do |ticket|
         match_list = check_list(ticket_list, ticket)
         converted_hash = {}
-        p match_list
         match_list.each_with_index do |correct, index|
             converted_hash[index] = correct
         end
@@ -37,4 +36,13 @@ def get_total_winners(ticket_list, winner_list)
     end
 
     built_array
+end
+
+def print_results(winning_data)
+    winning_data.each_with_index do |tickset, winid|
+        puts "\nData for winning ticket #{winid}"
+        tickset.each do |tresult|
+            puts "Ticket ##{tresult[0]} is off by: #{tresult[1]}"
+        end
+    end
 end
